@@ -36,7 +36,7 @@ def run_audit():
                 elif event.type == "TOOL_CALL":
                     print(f" -> Agent is running tool: {event.payload.get('name')}")
 
-                elif event.type == "DONE":
+                elif hasattr(event, "output") and event.output:
                     print(f"\n================ FINAL REPORT ================\n{event.output}")
                     break
         except Exception as e:
