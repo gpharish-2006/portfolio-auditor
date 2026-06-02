@@ -1,0 +1,3 @@
+agentspan
+yfinance
+python-dotenv
